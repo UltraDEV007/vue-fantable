@@ -17,7 +17,7 @@ export default defineConfig({
   ],
   test: {
     setupFiles: './tests/unit/setup.js',
-    globals: true,
+    // globals: true,
     environment: 'jsdom',
     // browser: {
     //   enabled: true,
