@@ -1,6 +1,7 @@
 import { getParentCompByName, hasValue } from '@P/src/utils/index'
 import { clsName } from './util/index'
 import { COMPS_NAME } from './util/constant'
+
 export default {
   name: COMPS_NAME.VE_CHECKBOX,
   props: {
@@ -187,7 +188,6 @@ export default {
             value={label}
             onChange={checkboxChange}
           />
-
           <span class={clsName('inner')}></span>
         </span>
         <span class={clsName('label')}>{getLabelContent()}</span>

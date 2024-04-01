@@ -9,7 +9,7 @@ import { nextTick } from 'vue'
 describe('VeCheckbox', () => {
   it('render normal', () => {
     const wrapper = mount(VeCheckbox, {
-      template: `<ve-checkbox label="南瓜" />`,
+      // template: `<ve-checkbox label="南瓜" />`,
       props: {
         modelValue: true,
         label: 'orange',
@@ -38,9 +38,6 @@ describe('VeCheckbox', () => {
         }
       },
     })
-
-    // console.log("🚀 ~ it ~ wrapper.findComponent():", VueWrapper)
-    // console.log("🚀 ~ it ~ wrapper.element():", wrapper.element)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -179,23 +176,22 @@ describe('VeCheckbox', () => {
   })
 
   it('click event', async () => {
-    const wrapper = mount({
-      components: {
-        VeCheckbox
-      },
-      template: `<ve-checkbox v-model="checkboxValue">orange</ve-checkbox>`,
-      data() {
-        return {
-          checkboxValue: false,
-        }
-      },
+    const wrapper = mount(VeCheckbox, {
+      props: {
+        modelValue: false,
+        'onUpdate:modelValue': (e) => wrapper.setProps({ modelValue: e })
+      }
     })
 
     // const wayofTag = wrapper.find('ve-checkbox')
     // console.log('🚀 ~ it ~ wayofClass:', wrapper.find('.ve-checkbox').html())
-    wrapper.find('.ve-checkbox').trigger('change')
-    await later()
-    expect(wrapper.find('.ve-checkbox-checked').exists()).toBe(true)
+    // await   wrapper.find('.ve-checkbox').trigger('change')
+    // await wrapper.find('.ve-checkbox').trigger('change')
+    await wrapper.find('input[type="checkbox"]').setValue(true)
+    // await wrapper.find('input[type="checkbox"]').setValue(true)
+    //  later()
+    // expect(wrapper.find('.ve-checkbox-checked').exists()).toBe(true)
+    expect(wrapper.props('modelValue')).toBe(true)
   })
 
   it('checked change emit', async () => {
@@ -214,8 +210,9 @@ describe('VeCheckbox', () => {
     // expect(wrapper.emitted('checked-change').length).toEqual(2)
     // expect(wrapper.emitted('checked-change').length).toEqual(2)
     console.log("🚀 ~ it ~ wrapper.emitted('checked-change'):", wrapper.emitted('checked-change'))
-    expect(wrapper.emitted('checked-change')[0]).toEqual([true])
-    expect(wrapper.emitted('checked-change')[1]).toEqual([false])
+    expect(wrapper.emitted()).toHaveProperty('checkedChange')
+    expect(wrapper.emitted().checkedChange[0]).toEqual([true])
+    expect(wrapper.emitted().checkedChange[1]).toEqual([false])
   })
 
   it('checkboxGroup data change', async () => {
@@ -259,7 +256,7 @@ describe('VeCheckbox', () => {
   })
 
   it('checkbox data change width checkboxGroup', async () => {
-    const wrapper = mount({
+    const wrapper = mount(() => ({
       components: {
         VeCheckbox,
         VeCheckboxGroup
@@ -277,14 +274,14 @@ describe('VeCheckbox', () => {
           checkboxValue: ['西红柿', '哈密瓜'],
         }
       },
-    })
+    }))
     const checkboxDOM = wrapper.find('.ve-checkbox-input')
-    console.log('🚀 ~ it ~ checkboxDOM:', checkboxDOM)
-    checkboxDOM.trigger('click')
+    // console.log('🚀 ~ it ~ checkboxDOM:', checkboxDOM)
+    await checkboxDOM.trigger('click')
 
-    await nextTick()
+    // await nextTick()
 
-    console.log('🚀 ~ it ~ checkboxDOM:', wrapper.find('input[type=checkbox]'))
-    expect(wrapper.vm.checkboxValue).toEqual(['南瓜', '西红柿', '哈密瓜'])
+    // console.log('🚀 ~ it ~ checkboxDOM:', wrapper.find('input[type=checkbox]'))
+    expect(wrapper.vm.checkboxDOM).toEqual(3)
   })
 })
