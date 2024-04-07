@@ -1,6 +1,3 @@
-// prefix
-export const PREFIX_CLS = 've-dropdown-'
-
 // emit events
 export const EMIT_EVENTS = {
   FILTER_RESET: 'on-filter-reset',

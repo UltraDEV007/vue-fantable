@@ -1,4 +1,4 @@
-import clickoutside from '../../src/directives/clickoutside.js'
+import clickOutside from '../../src/directives/clickoutside.js'
 import VeCheckbox from '@P/ve-checkbox/ve-checkbox.js'
 import VeRadio from '@P/ve-radio/ve-radio.js'
 import { COMPS_NAME } from './util/constant'
@@ -10,7 +10,7 @@ import { h } from 'vue'
 export default {
   name: COMPS_NAME.VE_DROPDOWN,
   directives: {
-    'click-outside': clickoutside,
+    'click-outside': clickOutside,
   },
   props: {
     // 如果是 select 组件将特殊处理
@@ -342,7 +342,7 @@ export default {
       }
     },
 
-    // remove or emoty root panel
+    // remove or empty root panel
     removeOrEmptyRootPanel() {
       const { rootId } = this
 
@@ -498,7 +498,7 @@ export default {
       })
     },
 
-    // checbox 受控属性管理
+    // checkbox 受控属性管理
     checkedChangeControl(item, isChecked) {
       this.internalOptions = this.internalOptions.map((i) => {
         if (i.label === item.label) {
@@ -669,7 +669,7 @@ export default {
                 'max-width': getMaxWidth + 'px',
               }}
             >
-              {/* custome content */}
+              {/* custom content */}
               {isCustomContent && h(this.$slots['custom-content'])}
               {/* not custom content */}
               {!isCustomContent && (
@@ -678,7 +678,7 @@ export default {
                     style={{
                       'max-height': maxHeight + 'px',
                     }}
-                    class={clsName('items-warpper')}
+                    class={clsName('items-wrapper')}
                   >
                     {content}
                   </div>

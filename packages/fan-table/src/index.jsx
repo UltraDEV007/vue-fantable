@@ -181,7 +181,7 @@ export default {
       },
     },
     /*
-        virual scroll option
+        virtual scroll option
         {
             enable:true,
             bufferCount:10, // 缓冲的数据
@@ -321,7 +321,7 @@ export default {
                 rowHeight:40
              } */
       ],
-      // colgroups
+      // colGroups
       colgroups: [],
       // groupColumns
       groupColumns: [],
@@ -958,37 +958,37 @@ export default {
       },
     )
 
-    // recieve body cell click
+    // receive body cell click
     this.eventCenter.on(GLOBAL_EVENT.BODY_CELL_CLICK, (params) => {
       this.bodyCellClick(params)
     })
 
-    // recieve body cell mouseover
+    // receive body cell mouseover
     this.eventCenter.on(GLOBAL_EVENT.BODY_CELL_MOUSEOVER, (params) => {
       this.bodyCellMouseover(params)
     })
 
-    // recieve body cell mousedown
+    // receive body cell mousedown
     this.eventCenter.on(GLOBAL_EVENT.BODY_CELL_MOUSEDOWN, (params) => {
       this.bodyCellMousedown(params)
     })
 
-    // recieve body cell mousemove
+    // receive body cell mousemove
     this.eventCenter.on(GLOBAL_EVENT.BODY_CELL_MOUSEMOVE, (params) => {
       this.bodyCellMousemove(params)
     })
 
-    // recieve body cell mouseup
+    // receive body cell mouseup
     this.eventCenter.on(GLOBAL_EVENT.BODY_CELL_MOUSEUP, (params) => {
       this.bodyCellMouseup(params)
     })
 
-    // recieve selection corner mousedown
+    // receive selection corner mousedown
     this.eventCenter.on(GLOBAL_EVENT.SELECTION_CORNER_MOUSEDOWN, (params) => {
       this.cellSelectionCornerMousedown(params)
     })
 
-    // recieve selection corner mouseup
+    // receive selection corner mouseup
     this.eventCenter.on(GLOBAL_EVENT.SELECTION_CORNER_MOUSEUP, (params) => {
       this.cellSelectionCornerMouseup(params)
     })
@@ -998,42 +998,42 @@ export default {
       this.autofillingDirectionChange(params)
     })
 
-    // recieve body cell contextmenu(right click)
+    // receive body cell contextmenu(right click)
     this.eventCenter.on(GLOBAL_EVENT.BODY_CELL_CONTEXTMENU, (params) => {
       this.bodyCellContextmenu(params)
     })
 
-    // recieve body cell double click
+    // receive body cell double click
     this.eventCenter.on(GLOBAL_EVENT.BODY_CELL_DOUBLE_CLICK, (params) => {
       this.bodyCellDoubleClick(params)
     })
 
-    // recieve header cell contextmenu(right click)
+    // receive header cell contextmenu(right click)
     this.eventCenter.on(GLOBAL_EVENT.HEADER_CELL_CLICK, (params) => {
       this.headerCellClick(params)
     })
 
-    // recieve header cell contextmenu(right click)
+    // receive header cell contextmenu(right click)
     this.eventCenter.on(GLOBAL_EVENT.HEADER_CELL_CONTEXTMENU, (params) => {
       this.headerCellContextmenu(params)
     })
 
-    // recieve header cell mousedown
+    // receive header cell mousedown
     this.eventCenter.on(GLOBAL_EVENT.HEADER_CELL_MOUSEDOWN, (params) => {
       this.headerCellMousedown(params)
     })
 
-    // recieve header cell mouseover
+    // receive header cell mouseover
     this.eventCenter.on(GLOBAL_EVENT.HEADER_CELL_MOUSEOVER, (params) => {
       this.headerCellMouseover(params)
     })
 
-    // recieve header cell mousemove
+    // receive header cell mousemove
     this.eventCenter.on(GLOBAL_EVENT.HEADER_CELL_MOUSEMOVE, (params) => {
       this.headerCellMousemove(params)
     })
 
-    // recieve header cell mouseleave
+    // receive header cell mouseleave
     this.eventCenter.on(GLOBAL_EVENT.HEADER_CELL_MOUSELEAVE, (params) => {
       this.headerCellMouseleave(params)
     })
@@ -3313,8 +3313,8 @@ export default {
       })
 
       if (isFunction(beforeCutCallback)) {
-        const allowCuting = beforeCutCallback(response)
-        if (isBoolean(allowCuting) && !allowCuting) {
+        const allowCutting = beforeCutCallback(response)
+        if (isBoolean(allowCutting) && !allowCutting) {
           return false
         }
       }
@@ -3711,8 +3711,8 @@ export default {
       currentRow = cloneDeep(currentRow)
 
       /*
-            调用API编辑的情况，需要关闭之前编辑的单元格
-            */
+        调用API编辑的情况，需要关闭之前编辑的单元格
+      */
       if (
         editingCell.rowKey === rowKey &&
         editingCell.colKey === colKey

@@ -67,7 +67,7 @@ export default {
       internalOptions: [],
 
       inputValue: '',
-      // dorpdown visible
+
       dropdownVisible: false,
     }
   },
@@ -142,7 +142,7 @@ export default {
       textAlign: this.textAlign,
       isInput: this.isInput,
       // v-model
-      value: this.internalOptions,
+      modelValue: this.internalOptions,
       hideByItemClick: true,
       popperAppendTo: this.popperAppendTo,
       style: {
