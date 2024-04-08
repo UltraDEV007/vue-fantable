@@ -1,23 +1,14 @@
-import { shallowRef } from 'vue'
-import { cloneDeep } from '@P/src/utils/index'
-import LangEN from '@P/src/locale/lang/en-US'
-
-const defaultLang = shallowRef(cloneDeep(LangEN))
+import { useLocal, getLocal } from '@P/hooks/useLocal'
 
 export default {
   getMessage() {
-    return defaultLang.value
+    return getLocal()
   },
   use(lang) {
-    this.update(lang)
+    useLocal(lang)
   },
   update(lang = {}) {
-    if (lang.pagination) {
-      defaultLang.value.pagination = lang.pagination
-    }
-    if (lang.table) {
-      defaultLang.value.table = lang.table
-    }
+    useLocal(lang)
     // defaultLang.value = merge(defaultLang.value, lang)
   },
 }
