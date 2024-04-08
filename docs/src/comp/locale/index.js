@@ -29,14 +29,14 @@ export default {
     anchorCatalogTitle: '目录',
     // 组件配置多语言跟着文档语言环境走
     compLang: zhCN,
-    eidtDemoTitle: '在 Github 上编辑',
-    eidtDemoUrlPrefix:
+    editDemoTitle: '在 Github 上编辑',
+    editDemoUrlPrefix:
             'https://github.com/fall-zhang/vue-fantable/edit/master/examples/src/docs/zh/',
     demo: {
       description: '功能描述',
       expandCode: '展开代码',
       foldCode: '收起代码',
-      openInCodepen: '在 Codepen 中编辑',
+      openInCodepen: '在 CodePen 中编辑',
       openInCodeSandBox: '在 CodeSandBox 中编辑',
     },
     completeDemo: {
@@ -100,13 +100,13 @@ export default {
     ],
     anchorCatalogTitle: 'Contents',
     compLang: enUS,
-    eidtDemoTitle: 'Edit this on Github',
-    eidtDemoUrlPrefix: 'https://github.com/fall-zhang/vue-fantable/edit/master/examples/src/docs/en/',
+    editDemoTitle: 'Edit this on Github',
+    editDemoUrlPrefix: 'https://github.com/fall-zhang/vue-fantable/edit/master/examples/src/docs/en/',
     demo: {
       description: 'Code Description',
       expandCode: 'Expand Code',
       foldCode: 'Hide Code',
-      openInCodepen: 'Edit in Codepen',
+      openInCodepen: 'Edit in CodePen',
       openInCodeSandBox: 'Edit in CodeSandBox',
     },
     completeDemo: {
@@ -139,7 +139,7 @@ export default {
       },
       demo2: {
         selection: 'Of course, you can use it like Excel or Google Sheets .',
-        description: 'In this case, you can try features such as right-click menu, multiple selection of rows and columns, real-time input, and cell autofilling, etc.',
+        description: 'In this case, you can try features such as right-click menu, multiple selection of rows and columns, real-time input, and cell auto filling, etc.',
       },
     },
   },

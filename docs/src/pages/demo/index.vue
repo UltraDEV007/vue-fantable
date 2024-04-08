@@ -7,12 +7,16 @@
       <div class="demo-title">
         <div class="demo-title-text">
           {{ currentLocal.demo1.selection }}
+          <a class="to-source" target="_blank"
+            href="https://github.com/fall-zhang/vue-fantable/blob/root/docs/src/pages/demo/normal-data-grid.vue">源代码</a>
         </div>
       </div>
       <NormalDataGrid />
       <div class="demo-title last">
         <div class="demo-title-text">
           {{ currentLocal.demo2.selection }}
+          <a class="to-source" target="_blank"
+            href="https://github.com/fall-zhang/vue-fantable/blob/root/docs/src/pages/demo/SpreadSheet.vue">源代码</a>
         </div>
       </div>
       <SpreadSheet />
@@ -87,6 +91,14 @@ export default {
       display: inline;
       padding: 0 8px;
       border-left: 4px solid #555;
+    }
+
+    .to-source {
+      font-size: 14px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     &.last {
