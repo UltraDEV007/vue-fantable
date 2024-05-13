@@ -1,5 +1,6 @@
 // key codes
 export const KEY_CODES = {
+  
   BACK_SPACE: 8,
   TAB: 9,
   ENTER: 13,
@@ -14,4 +15,5 @@ export const KEY_CODES = {
   DELETE: 46,
 
   F2: 113,
+  
 }
